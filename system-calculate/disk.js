@@ -21,6 +21,8 @@ async function percetageUsedDisk() {
         console.log(`system used ${total - free} from ${total} Disk`);
         console.log("percentUsedDisk", percentUsedDisk);
       } else if (process.platform == "linux") {
+        let total = 0,
+        free = 0;
         for (const disk of Disks) {
           const valumDisk = await checkDiskSpace(disk);
           total += valumDisk.size;
