@@ -13,8 +13,10 @@ async function percetageUsedDisk() {
           free = 0;
         for (const disk of Disks) {
           const valumDisk = await checkDiskSpace(disk);
-          total += valumDisk.size;
-          free += valumDisk.free;
+          if (valumDisk.size != NaN || valumDisk.free) {
+            total += valumDisk.size;
+            free += valumDisk.free;
+          }
         }
         const percentUsedDisk = ((total - free) / total) * 100;
         console.log("Windows ===>");
@@ -22,7 +24,7 @@ async function percetageUsedDisk() {
         console.log("percentUsedDisk", percentUsedDisk);
       } else if (process.platform == "linux") {
         let total = 0,
-        free = 0;
+          free = 0;
         for (const disk of Disks) {
           const valumDisk = await checkDiskSpace(disk);
           total += valumDisk.size;
