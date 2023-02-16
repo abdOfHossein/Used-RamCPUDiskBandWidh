@@ -6,9 +6,10 @@ const percentUsedRam = require("./system-calculate/ram");
 const percetageUsedDisk = require("./system-calculate/disk");
 const percentUsedNetworkTraffic = require("./system-calculate/network-traffic");
 
-(async function percentUsed(params) {
+(async function percentUsed() {
   console.log("#########################  DISK  ########################");
-  await percetageUsedDisk();
+    // you should enter 4 drive in below function
+  await percetageUsedDisk('C','D','E','');
    console.log("#########################  CPU  ########################");
   percetageUsedCpu();
    console.log("#########################  RAM  ########################");
