@@ -9,7 +9,7 @@ const percentUsedNetworkTraffic = require("./system-calculate/network-traffic");
 (async function percentUsed() {
   console.log("#########################  DISK  ########################");
     // you should enter 4 drive in below function
-  await percetageUsedDisk('C','D','E','');
+  await percetageUsedDisk();
    console.log("#########################  CPU  ########################");
   percetageUsedCpu();
    console.log("#########################  RAM  ########################");
